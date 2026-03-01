@@ -1,0 +1,15 @@
+---
+- name: Create sudoers file
+  hosts: all #should force host to be specified instead of all keyword so mistake isnt made
+  gather_facts: no
+
+  tasks:
+    - name: Include role to create sudoers file
+      ansible.builtin.include_role:
+        name: ans_linux_sudoers_role
+        tasks_from: sudoers_create.yml
+      vars:
+          group_type: ""
+          which_group: ""
+          managed_by: ""
+

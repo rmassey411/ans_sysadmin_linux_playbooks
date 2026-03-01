@@ -1,0 +1,11 @@
+---
+- name: Fix root password
+  hosts: all
+  gather_facts: true
+
+  tasks:
+    - name: What are you doing
+      ansible.builtin.debug: 
+        msg: "I haven't done anything"
+
+        

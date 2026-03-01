@@ -1,0 +1,13 @@
+---
+- name: Setup volume group for app
+  hosts: all
+  gather_facts: yes
+
+  tasks:
+    # - name: Import role for for appvg
+    #   ansible.builtin.import_role:
+    #     name: ans_linux_appvg_role
+    - name: Import role and task for for appvg
+      ansible.builtin.include_role:
+        name: ans_linux_misc_role
+        tasks_from: filesystem/lvm_app_disk.yml

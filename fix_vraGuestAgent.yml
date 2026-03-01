@@ -1,0 +1,14 @@
+---
+- name: Fix vRA Guest Agent
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Remove vRA Guest Agent rpm
+      ansible.builtin.shell: 
+        cmd: rpm -qa | grep -i gugent | xargs rpm -e
+
+    - name: Remove vRA Guest Agent directory
+      ansible.builtin.file:
+        path: /usr/share/gugent
+        state: absent

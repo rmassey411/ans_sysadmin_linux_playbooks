@@ -1,0 +1,15 @@
+---
+# legacy playbook.  probably no longer needed
+- name: Give admin rights on servers
+  hosts: all
+  become: true
+  gather_facts: true
+
+  vars:
+    domain_name: "domain.local"
+
+  tasks:
+    - name: Give admin rights within Linux OS
+      ansible.builtin.include_role:
+        name: ans_linux_misc_role
+        tasks_from: sudoers/sudoers_addadmins.yml

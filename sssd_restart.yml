@@ -1,0 +1,15 @@
+---
+- name: Stop and Start sssd
+  hosts: all
+  gather_facts: true
+
+  tasks:
+    - name: Stop sssd
+      ansible.builtin.service: 
+        name: sssd
+        state: stopped
+
+    - name: Start sssd
+      ansible.builtin.service:
+        name: sssd
+        state: started
