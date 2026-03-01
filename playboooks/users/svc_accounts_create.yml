@@ -1,13 +1,13 @@
 ---
 - name: Create service account
   hosts: all
-  become: yes
-  gather_facts: yes
+  become: true
+  gather_facts: true
 
   tasks:
     - name: Create user
       ansible.builtin.include_role:
-        name: ans_linux_misc_role
+        name: ans_sysadmin_linux_role
         tasks_from: "users/create_svcaccts.yml"
       vars:
         account: "{{ account_name }}"

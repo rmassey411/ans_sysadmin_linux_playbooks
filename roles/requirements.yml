@@ -1,8 +1,5 @@
 ---
 # Added role for linux tasks
- - src: git+https://git.temple.edu/engineering-operations/server-administration/ans_linux_misc_role.git
+ - src: git+https://github.com/rmassey411/ans_sysadmin_linux_role.git
    scm: git
 
-# Added for install_carbonblack
- - src: git+https://git.temple.edu/its-infosec/vmware-carbon-black/ans_carbonblack_bootstrap_role.git
-   scm: git
